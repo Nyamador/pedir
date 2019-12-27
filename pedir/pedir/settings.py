@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #Custom apps
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
+    'feed.apps.FeedConfig',
 
     #3rd Party
     'allauth',
@@ -134,6 +135,7 @@ STATIC_URL = '/static/'
 
 SITE_ID = 1
 
+AUTH_USER_MODEL = 'users.SocialUser'
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
