@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>{% block head_title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/fonts/feather/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static '/libs/flatpickr/dist/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static '/libs/quill/dist/quill.core.css' %}">
+    <link rel="stylesheet" href="{% static '/libs/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static '/libs/highlight.js/styles/vs2015.css' %}">
+    <link rel="stylesheet" href="{% static '/fonts/feather/feather.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/theme.min.css' %}" id="stylesheetLight">
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+
+  <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
+    {% block body %}
+    <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-12 col-md-5 col-xl-4 my-5">
+    {% block content %}
+    {% endblock %}
+    {% endblock %}
+    </div>
+      </div>
+    </div>
+    {% block extra_body %}
+    {% endblock %}
+    <script src="{% static '/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static '/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/theme.min.js' %}"></script>
+  </body>
+</html>

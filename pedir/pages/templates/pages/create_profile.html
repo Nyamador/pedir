@@ -1,0 +1,82 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'css/matte.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+</head>
+<body>
+<header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+            <span class="mdc-top-app-bar__title">Title</span>
+        </section>
+
+        <div style="vertical-align: middle;display: flex;justify-content: center;align-items: center;padding:8px;">
+            {% if request.user.is_authenticated %}
+            <a class="mdc-button mdc-button--unelevated bordered-btn">
+                <span class="mdc-button__ripple">
+                </span> Create a profile
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+<div class="homepage-banner">
+    <section class="homepage-banner-content">
+        <svg _ngcontent-wci-c5="" aria-hidden="true" class="homepage-logo-svg" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs _ngcontent-wci-c5=""><style _ngcontent-wci-c5="">.cls-1{fill:#fff;}</style></defs><title _ngcontent-wci-c5="">material_light</title><path _ngcontent-wci-c5="" class="cls-1" d="M48,0A48,48,0,1,0,96,48,48,48,0,0,0,48,0ZM18,22,46,78H18Zm2.47-4H75.53L48,73.06ZM78,22V78H50Zm4-1.9a43.92,43.92,0,0,1,0,55.8ZM75.9,14H20.1a43.92,43.92,0,0,1,55.8,0ZM14,20.1V75.9a43.92,43.92,0,0,1,0-55.8ZM20.1,82H75.9a43.92,43.92,0,0,1-55.8,0Z"></path></svg>
+        <h1>Create Your Profile.</h1>
+    </section>
+</div>
+
+<section>
+    <div class="main-container">
+        <div class="section-header">
+            <h2 class="home-heading">Featured Profiles</h2>
+            <p>Check out the most popular profiles</p>
+        </div>
+
+        <div class="grid">
+                    <form>
+                        <div class="mdc-text-field mdc-text-field--fullwidth">
+                          <input class="mdc-text-field__input"
+                                 type="text"
+                                 placeholder="FirstName"
+                                 aria-label="FirstName">
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--fullwidth">
+                          <input class="mdc-text-field__input"
+                                 type="text"
+                                 placeholder="Full-Width Text Field"
+                                 aria-label="Full-Width Text Field">
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--fullwidth">
+                          <input class="mdc-text-field__input"
+                                 type="text"
+                                 placeholder="Full-Width Text Field"
+                                 aria-label="Full-Width Text Field">
+                        </div>
+
+
+
+                    </form>
+        </div>
+    </div>
+
+
+</section>
+
+<footer class="footer">
+        <div class="inner-footer">
+            <p>Lorem    </p>
+            <p>lOREM SOINSIDIUBSDIUIUSDIUSHIUHSUDIHSIUDH</p>
+        </div>
+</footer>
+    <script src="{% static 'js/matte.js' %}"></script>
+</body>
+</html>
