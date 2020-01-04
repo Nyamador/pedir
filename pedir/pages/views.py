@@ -17,6 +17,15 @@ def new(request):
     return render(request, 'pages/new-post.html')
 
 
+def detail(request, slug):
+    post = get_object_or_404(Blog, slug=slug)
+
+    context = {
+        'post': post
+    }
+    return render(request, 'pages/detail.html', context)
+
+
 def create_profile(request):
     return render(request, 'pages/create_profile.html')
 

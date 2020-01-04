@@ -8,7 +8,7 @@ class Blog(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(verbose_name="Title", max_length=150, null=False, blank=False)
     slug = models.SlugField(verbose_name="Slug", max_length=100, unique=True)
-    body = models.CharField(verbose_name="Blog Body", max_length=5000, null=False, blank=False)
+    body = models.CharField(verbose_name="Blog Body", max_length=50000, null=False, blank=False)
     created = models.DateField(verbose_name="Date Created", auto_now_add=True)
 
     def __str__(self):
@@ -26,5 +26,5 @@ class Blog(models.Model):
             return int(1)
         return int(read_time)
 
-    # def get_absolute_url(self):
-    #     return reverse()
+    def get_absolute_url(self):
+        return reverse('post-detail', args=[str(self.slug)])

@@ -40,10 +40,10 @@ class Profile(models.Model):
     ig = models.URLField(verbose_name="Ig Url", max_length=150, null=True, blank=True)
 
     def __str__(self):
-        return self.fullname
+        return f'{self.first_name} {self.last_name}'
 
     def save(self,*args, **kwargs):
-        self.slug = slugify(self.fullname)
+        self.slug = slugify(self.username)
         super(Profile, self).save(*args, **kwargs)
 
     def get_absolute_url(self):

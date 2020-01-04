@@ -15,8 +15,8 @@
           </button>
 
           <!-- Brand -->
-          <a class="navbar-brand mr-auto" href="index.html">
-            <p>aksmaksmk</p>
+          <a class="navbar-brand mr-auto text-muted" href="index.html">
+            Scribble
           </a>
 
           <!-- Form -->
@@ -194,8 +194,9 @@
             </div>
           </form>
 
-<div class="navbar-user">
+          <div class="navbar-user">
 
+            {% comment%}
             <!-- Dropdown -->
             <div class="dropdown mr-4 d-none d-lg-flex">
 
@@ -205,8 +206,10 @@
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
+              {% endcomment %}
 
               <!-- Menu -->
+
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
                 <div class="card-header">
                   <div class="row align-items-center">
@@ -510,7 +513,7 @@
 
                           <!-- Title -->
                           <h4 class="card-title mb-1 name blog-title">
-                            <a href="#">{{ post.title }}</a>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                           </h4>
 
                           <!-- Text -->
@@ -521,7 +524,7 @@
                             <!--Author-->
                             <h4 class="card-title mb-1 name" style="margin-top: 10px;">
                                 <a href="#">
-                                    Desmond Nyamador
+                                    {{ post.user.profile }}
                                 </a>
                             </h4>
                           <!-- Time -->
@@ -562,13 +565,14 @@
               {% endfor  %}
             </div>
 
-            <div class="col-3 ">
+            <div class="col-3 trends-desktop">
                 <div class="card">
                     <div class="card-body">
                       <h1 class="header-title">Top Posts   <i class="fe fe-trending-up"></i></h1>
                         <hr>
                       <p class="text-muted">1</p>
                     </div>
+            </div>
                 </div>
             </div>
 

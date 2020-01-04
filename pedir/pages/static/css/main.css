@@ -21,3 +21,11 @@
     height: 8rem;
     font-size: 1.33333rem;
 }
+
+@media (max-width: 700px) {
+
+    .trends-desktop{
+    display: none !important;
+    }
+
+}
