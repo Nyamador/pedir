@@ -6,6 +6,12 @@
     <title>Title</title>
 </head>
 <body>
-            {{ post.body }}
+            {% block body %}
+                {{ post.title}}
+                <div>
+
+                    {{ post.get_body_as_markdown }}
+                </div>
+            {% endblock body %}
 </body>
 </html>

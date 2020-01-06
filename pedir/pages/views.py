@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from users.models import Profile
 from blog.models import Blog
+from blog.forms import BlogCreationForm
 
 
 def index(request):
@@ -14,6 +15,14 @@ def index(request):
 
 
 def new(request):
+    if request.method == 'POST':
+            user = request.user
+            title = request.POST.get('title')
+            body = request.POST.get('body')
+            new_blog = Blog(user=user, title=title, body=body)
+            new_blog.save()
+            return redirect('home')
+
     return render(request, 'pages/new-post.html')
 
 

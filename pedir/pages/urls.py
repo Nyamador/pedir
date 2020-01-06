@@ -8,8 +8,3 @@ urlpatterns = [
     path('b/<slug:slug>', views.detail, name='post-detail'),
     # path('like', views.like_it, name="like-it"),
 ]
-
-#Routes
-# Home
-# Blog Detail
-# Profile

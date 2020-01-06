@@ -1,9 +1,9 @@
 {% extends 'pages/_base.html' %}
 {% load static %}
 
-{% block extrahead %}
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-{% endblock extrahead %}
+    {% block extrahead %}
+              <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endblock extrahead %}
 
 {% block body %}
 <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
@@ -36,7 +36,8 @@
                 <div class="card-body">
 
                   <!-- List group -->
-                  <div class="list-group list-group-flush list my-n3"><a href="team-overview.html" class="list-group-item px-0">
+                  <div class="list-group list-group-flush list my-n3">
+                    <a href="{% url 'home' %}" class="list-group-item px-0">
                       <div class="row align-items-center">
                         <div class="col-auto">
 
@@ -45,148 +46,19 @@
 
                           <!-- Title -->
                           <h4 class="text-body mb-1 name">
-                            Airbnb
+                            Search Coming Soon
                           </h4>
 
                           <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
-                          </p>
+<!--                          <p class="small text-muted mb-0">-->
+<!--                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>-->
+<!--                          </p>-->
 
                         </div>
                       </div> <!-- / .row -->
-                    </a><a href="team-overview.html" class="list-group-item px-0">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
+                    </a>
 
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Medium Corporation
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Homepage Redesign
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Travels &amp; Time
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Safari Exploration
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="profile-posts.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Dianna Smiley
-                          </h4>
-
-                          <!-- Status -->
-                          <p class="text-body small mb-0">
-                            <span class="text-success">●</span> Online
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="profile-posts.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Ab Hadley
-                          </h4>
-
-                          <!-- Status -->
-                          <p class="text-body small mb-0">
-                            <span class="text-danger">●</span> Offline
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a></div>
+                  </div>
 
                 </div>
               </div> <!-- / .dropdown-menu -->
@@ -472,6 +344,7 @@
                     <a href="profile-posts.html" class="dropdown-item">Profile</a>
                     <a href="settings.html" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
+                    <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                   </div>
@@ -529,7 +402,7 @@
                             </h4>
                           <!-- Time -->
                           <p class="card-text small text-muted">
-                            <i class="fe fe-clock"></i> {{ post.created }}  | {{ post.get_avg_read_time }} min read
+                            <i class="fe fe-clock"></i> {{ post.created }} | {{ post.get_avg_read_time }} min read
                           </p>
 
                         </div>
@@ -566,9 +439,9 @@
             </div>
 
             <div class="col-3 trends-desktop">
-                <div class="card">
+                <div class="card trends-desktop">
                     <div class="card-body">
-                      <h1 class="header-title">Top Posts   <i class="fe fe-trending-up"></i></h1>
+                      <h1 class="header-title"></h1>
                         <hr>
                       <p class="text-muted">1</p>
                     </div>

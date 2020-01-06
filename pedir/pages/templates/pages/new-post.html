@@ -15,8 +15,8 @@
           </button>
 
           <!-- Brand -->
-          <a class="navbar-brand mr-auto" href="index.html">
-            <p>aksmaksmk</p>
+          <a class="navbar-brand mr-auto text-muted" href="index.html">
+            Scribble
           </a>
 
           <!-- Form -->
@@ -36,7 +36,8 @@
                 <div class="card-body">
 
                   <!-- List group -->
-                  <div class="list-group list-group-flush list my-n3"><a href="team-overview.html" class="list-group-item px-0">
+                  <div class="list-group list-group-flush list my-n3">
+                    <a href="{% url 'home' %}" class="list-group-item px-0">
                       <div class="row align-items-center">
                         <div class="col-auto">
 
@@ -45,148 +46,19 @@
 
                           <!-- Title -->
                           <h4 class="text-body mb-1 name">
-                            Airbnb
+                            Search Coming Soon
                           </h4>
 
                           <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
-                          </p>
+<!--                          <p class="small text-muted mb-0">-->
+<!--                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>-->
+<!--                          </p>-->
 
                         </div>
                       </div> <!-- / .row -->
-                    </a><a href="team-overview.html" class="list-group-item px-0">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
+                    </a>
 
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Medium Corporation
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Homepage Redesign
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Travels &amp; Time
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="project-overview.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Safari Exploration
-                          </h4>
-
-                          <!-- Time -->
-                          <p class="small text-muted mb-0">
-                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="profile-posts.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Dianna Smiley
-                          </h4>
-
-                          <!-- Status -->
-                          <p class="text-body small mb-0">
-                            <span class="text-success">●</span> Online
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a><a href="profile-posts.html" class="list-group-item px-0">
-
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="text-body mb-1 name">
-                            Ab Hadley
-                          </h4>
-
-                          <!-- Status -->
-                          <p class="text-body small mb-0">
-                            <span class="text-danger">●</span> Offline
-                          </p>
-
-                        </div>
-                      </div> <!-- / .row -->
-
-                    </a></div>
+                  </div>
 
                 </div>
               </div> <!-- / .dropdown-menu -->
@@ -194,8 +66,9 @@
             </div>
           </form>
 
-<div class="navbar-user">
+          <div class="navbar-user">
 
+            {% comment%}
             <!-- Dropdown -->
             <div class="dropdown mr-4 d-none d-lg-flex">
 
@@ -205,8 +78,10 @@
                   <i class="fe fe-bell"></i>
                 </span>
               </a>
+              {% endcomment %}
 
               <!-- Menu -->
+
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
                 <div class="card-header">
                   <div class="row align-items-center">
@@ -469,6 +344,7 @@
                     <a href="profile-posts.html" class="dropdown-item">Profile</a>
                     <a href="settings.html" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
+                    <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                   </div>
@@ -510,18 +386,29 @@
 
                       </div>
                     </div>
+              <form class="" method="post">
+                  {% csrf_token %}
+                <div class="form-group">
+                    <label>Title</label>
+                    <input name="title" class="form-control" placeholder="Give your blog a title" required>
+                </div>
 
-            <textarea id="demo2" class="form-control"></textarea>
+                <div class="form-group">
+                  <textarea id="demo2" class="form-control" name="body"></textarea>
+                </div>
+
+
 
              </div>
 
           <hr>
 
             <div class="container mb-10">
-                <button class="btn btn-primary btn-lg btn-block">
+                <button type="submit"  class="btn btn-primary btn-lg btn-block">
                     Save
                 </button>
               </div>
+          </form>
 
 
 
