@@ -2,7 +2,7 @@
 {% load static %}
 
     {% block extrahead %}
-        <link rel="stylesheet" href="{% static 'libs/mde/simplemde.min.css' %}">
+        <link rel="stylesheet" href="{% static 'libs/quill/dist/quill.core.css' %}">
     {% endblock extrahead %}
 
     {% block body %}
@@ -15,7 +15,7 @@
           </button>
 
           <!-- Brand -->
-          <a class="navbar-brand mr-auto text-muted" href="index.html">
+          <a class="navbar-brand mr-auto text-muted"  href="{% url 'home' %}">
             Scribble
           </a>
 
@@ -394,7 +394,7 @@
                 </div>
 
                 <div class="form-group">
-                  <textarea id="demo2" class="form-control" name="body"></textarea>
+                  <div id="editor" name="body"></div>
                 </div>
 
 
@@ -415,22 +415,13 @@
         </div>
     {% endblock body %}
     {% block extrajs %}
-    <script src="{% static 'libs/mde/simplemde.min.js' %}"></script>
+    <script src="{% static 'libs/quill/dist/quill.min.js' %}"></script>
     <script>
 
-	// new SimpleMDE({
-	// 	element: document.getElementById("demo1"),
-	// 	spellChecker: false,
-	// });
-
-	new SimpleMDE({
-		element: document.getElementById("demo2"),
-		spellChecker: false,
-		autosave: {
-			enabled: true,
-			unique_id: "demo2",
-		},
-	});
+	var quill = new Quill('#editor', {
+	 modules:{toolbar:[["bold","italic"],["link","blockquote","code","image"],[{list:"ordered"},{list:"bullet"}]]},
+       theme:"snow"
+    });
     </script>
 
 

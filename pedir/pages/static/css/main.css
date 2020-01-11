@@ -22,9 +22,7 @@
     font-size: 1.33333rem;
 }
 
-    .col-3.trends-desktop{
-        display: none !important;
-    }
+
 
 @media (max-width: 900px) {
 

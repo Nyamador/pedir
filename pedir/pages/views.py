@@ -38,10 +38,10 @@ def detail(request, slug):
 def create_profile(request):
     return render(request, 'pages/create_profile.html')
 
-# @login_required
-# def profile_view(request, slug):
-#     profile = get_object_or_404(Profile, slug=slug)
-#     context = {
-#         'profile': profile
-#     }
-#     return render(request, 'pages/profile_view.html', context)
+
+def profile_view(request):
+    # profile = get_object_or_404(Profile, slug=slug)
+    # context = {
+    #     'profile': profile
+    # }
+    return render(request, 'pages/profile_view.html')

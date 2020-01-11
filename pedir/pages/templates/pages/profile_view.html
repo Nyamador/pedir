@@ -1,1 +1,491 @@
-<H1>Profile View</H1>
+{% extends 'pages/_base.html' %}
+{% load static %}
+
+
+    {% block extrahead %}
+            <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endblock extrahead %}
+
+{% block body%}
+<div class="main-content">
+    <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
+        <div class="container">
+
+          <!-- Toggler -->
+          <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Brand -->
+          <a class="navbar-brand mr-auto text-muted" href="index.html">
+            Scribble
+          </a>
+
+          <!-- Form -->
+          <form class="form-inline mr-4 d-none d-lg-flex">
+            <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-options="{&quot;valueNames&quot;: [&quot;name&quot;]}">
+
+              <!-- Input -->
+              <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown" placeholder="Search" aria-label="Search">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fe fe-search"></i>
+                </div>
+              </div>
+
+              <!-- Menu -->
+              <div class="dropdown-menu dropdown-menu-card">
+                <div class="card-body">
+
+                  <!-- List group -->
+                  <div class="list-group list-group-flush list my-n3">
+                    <a href="{% url 'home' %}" class="list-group-item px-0">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Title -->
+                          <h4 class="text-body mb-1 name">
+                            Search Coming Soon
+                          </h4>
+
+                          <!-- Time -->
+<!--                          <p class="small text-muted mb-0">-->
+<!--                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>-->
+<!--                          </p>-->
+
+                        </div>
+                      </div> <!-- / .row -->
+                    </a>
+
+                  </div>
+
+                </div>
+              </div> <!-- / .dropdown-menu -->
+
+            </div>
+          </form>
+
+          <div class="navbar-user">
+
+            {% comment%}
+            <!-- Dropdown -->
+            <div class="dropdown mr-4 d-none d-lg-flex">
+
+              <!-- Toggle -->
+              <a href="#" class="navbar-user-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon active">
+                  <i class="fe fe-bell"></i>
+                </span>
+              </a>
+              {% endcomment %}
+
+              <!-- Menu -->
+
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
+                <div class="card-header">
+                  <div class="row align-items-center">
+                    <div class="col">
+
+                      <!-- Title -->
+                      <h5 class="card-header-title">
+                        Notifications
+                      </h5>
+
+                    </div>
+                    <div class="col-auto">
+
+                      <!-- Link -->
+                      <a href="#!" class="small">
+                        View all
+                      </a>
+
+                    </div>
+                  </div> <!-- / .row -->
+                </div> <!-- / .card-header -->
+                <div class="card-body">
+
+                  <!-- List group -->
+                  <div class="list-group list-group-flush my-n3">
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Dianna Smiley</strong> shared your post with Ab Hadley, Adolfo Hess, and 3 others.
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-2.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Ab Hadley</strong> reacted to your post with a 😍
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-3.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Adolfo Hess</strong> commented <blockquote class="mb-0">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-4.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Daniela Dewitt</strong> subscribed to you.
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-5.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Miyah Myles</strong> shared your post with Ryu Duke, Glen Rouse, and 3 others.
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-6.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Ryu Duke</strong> reacted to your post with a 😍
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-7.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Glen Rouse</strong> commented <blockquote class="mb-0">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item text-reset px-0" href="#!">
+
+                      <div class="row">
+                        <div class="col-auto">
+
+                          <!-- Avatar -->
+                          <div class="avatar avatar-sm">
+                            <img src="{% static '/img/avatars/profiles/avatar-8.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                          </div>
+
+                        </div>
+                        <div class="col ml-n2">
+
+                          <!-- Content -->
+                          <div class="small">
+                            <strong>Grace Gross</strong> subscribed to you.
+                          </div>
+
+                          <!-- Time -->
+                          <small class="text-muted">
+                            2m ago
+                          </small>
+
+                        </div>
+                      </div> <!-- / .row -->
+
+                    </a>
+                  </div>
+
+                </div>
+              </div> <!-- / .dropdown-menu -->
+
+            </div>
+
+            <!-- Dropdown -->
+            {% if request.user.is_authenticated %}
+                <div class="dropdown">
+
+                  <!-- Toggle -->
+                  <a href="#" class="avatar avatar-sm dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" -webkit-mask-image: none;">
+                    <img src="{% static '/img/avatars/profiles/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                  </a>
+
+                  <!-- Menu -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a href="profile-posts.html" class="dropdown-item">Profile</a>
+                    <a href="settings.html" class="dropdown-item">Settings</a>
+                    <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
+                    <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
+                    <hr class="dropdown-divider">
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                  </div>
+
+                </div>
+            {%  else %}
+                <a class="btn btn-outline-secondary mb-2" href="{% url 'account_login' %}">Login</a>
+            {% endif %}
+
+
+
+          </div>
+
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
+
+            <!-- Form -->
+            <form class="mt-4 mb-3 d-md-none">
+              <input type="search" class="form-control form-control-rounded" placeholder="Search" aria-label="Search">
+            </form>
+
+
+          </div>
+
+        </div> <!-- / .container -->
+      </nav>
+
+        <div class="container">
+            <div class="header-body mt-n5 mt-md-n6" >
+            <div class="row align-items-end" style="margin-top: 60px;">
+              <div class="col-auto">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-xxl header-avatar-top">
+                  <img src="{% static '/img/avatars/profiles/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle border border-4 border-body">
+                </div>
+
+              </div>
+              <div class="col mb-3 ml-n3 ml-md-n2">
+
+                <!-- Pretitle -->
+                <h6 class="header-pretitle">
+                  Members
+                </h6>
+
+                <!-- Title -->
+                <h1 class="header-title">
+                  Dianna Smiley
+                </h1>
+
+              </div>
+              <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
+
+                <!-- Button -->
+                  {% comment %}
+                <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
+                  Subscribe
+                </a>
+                  {% endcomment %}
+
+              </div>
+            </div> <!-- / .row -->
+            <div class="row align-items-center">
+              <div class="col">
+
+                <!-- Nav -->
+                <ul class="nav nav-tabs nav-overflow header-tabs">
+                  <li class="nav-item">
+                    <a href="profile-posts.html" class="nav-link active">
+                      Posts
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+            <div class="container" style="margin-top:20px">
+    <div class="card">
+                    <div class="card-body">
+                      <div class="row align-items-center">
+
+                        <div class="col ml-n2">
+
+                          <!-- Title -->
+                          <h4 class="card-title mb-1 name blog-title">
+                            <a href="/b/analyze-a-soccer-game-using-tensorflow-object-detection">Analyze a Soccer game using Tensorflow Object Detection</a>
+                          </h4>
+
+                          <!-- Text -->
+                          <p class="card-text small text-muted mb-1 post-summary">
+                            Doing cool thingDjango administrationDjango administrationDjango administrationDjango administrationDjango administrationDjango administrationDjango administrations with dataAnalyze Analyze a Soccer game using Tensorflow Object Detectiona Soccer game using Tensorflow Object DetectionAnalyze a Soccer game using Tensorflow Object DetectionAnalyze a Soccer game using Tensorflow Object DetectionAnalyze a Soccer game using Tensorflow Object Detection
+                          </p>
+
+                            <!--Author-->
+                            <h4 class="card-title mb-1 name" style="margin-top: 10px;">
+                                <a href="#">
+                                    Desmond Nyamador
+                                </a>
+                            </h4>
+                          <!-- Time -->
+                          <p class="card-text small text-muted">
+                            <i class="fe fe-clock"></i> Jan. 4, 2020 | 2 min read
+                          </p>
+
+                        </div>
+
+
+                      <div class="col-auto">
+
+                          <!-- Dropdown -->
+                          <div class="dropdown">
+                            <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fe fe-more-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(17px, 25px, 0px);">
+                              <a href="#!" class="dropdown-item">
+                                Bookmark
+                              </a>
+                              <a href="#!" class="dropdown-item">
+                                Report
+                              </a>
+                            </div>
+                          </div>
+
+                        </div><div class="col-auto">
+
+                          <!-- Avatar -->
+                          <a href="project-team-overview.html" class="avatar avatar-lg">
+                            <img src="/static/img/avatars/teams/team-logo-1.jpg" alt="..." class="avatar-img rounded">
+                          </a>
+
+                        </div></div> <!-- / .row -->
+                    </div> <!-- / .card-body -->
+                  </div>
+</div>
+        </div>
+</div>
+
+
+{% endblock body %}
