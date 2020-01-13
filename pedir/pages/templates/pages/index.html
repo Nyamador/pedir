@@ -341,8 +341,8 @@
 
                   <!-- Menu -->
                   <div class="dropdown-menu dropdown-menu-right">
-                    <a href="profile-posts.html" class="dropdown-item">Profile</a>
-                    <a href="settings.html" class="dropdown-item">Settings</a>
+                    <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
+                    <a href="{% url 'view-profile' %}" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
                     <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
@@ -391,7 +391,7 @@
 
                           <!-- Text -->
                           <p class="card-text small text-muted mb-1 post-summary">
-                            {{ post.body }}
+                            {{ post.get_body_as_plaintext | striptags }}
                           </p>
 
                             <!--Author-->
@@ -402,7 +402,7 @@
                             </h4>
                           <!-- Time -->
                           <p class="card-text small text-muted">
-                            <i class="fe fe-clock"></i> {{ post.created }} | {{ post.get_avg_read_time }} min read
+                            <i class="fe fe-clock"></i> {{ post.created  }} | {{ post.get_avg_read_time }} min read
                           </p>
 
                         </div>

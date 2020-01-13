@@ -5,6 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+      {% block extrahead %}
+         <link rel="stylesheet" href="{% static 'libs/highlightjs/styles/vs2015.css' %}">
+    {% endblock extrahead %}
 </head>
 <body>
         {% block body %}
@@ -361,7 +364,7 @@
           </div>
 
           <!-- Collapse -->
-          <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
+          <div class="collapse navbar-co-llapse mr-auto order-lg-first" id="navbar">
 
             <!-- Form -->
             <form class="mt-4 mb-3 d-md-none">
@@ -390,10 +393,26 @@
                     </div>
 
                     <div>
-                        {{ post.body }}
+                        {% autoescape on %}
+                            {{ post.get_body_as_markdown }}
+                        {% endautoescape %}
                     </div>
                 </div>
         </div>
-        {% endblock body %}
+
+            {% block extrajs %}
+        <script src="{% static 'libs/highlightjs/highlight.pack.min.js' %}"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('code').forEach((block) => {
+            hljs.highlightBlock(block);
+          });
+        });
+        // hljs.initHighlightingOnLoad();
+      </script>
+            {% endblock extrajs %}
+{% endblock body %}
+
+
 </body>
 </html>

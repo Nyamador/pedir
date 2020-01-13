@@ -21,7 +21,7 @@
     {% block body %}
 
 
-    {% endblock body %}
+
     <!-- JAVASCRIPT
     ================================================== -->
     <!-- Libs JS -->
@@ -30,11 +30,12 @@
     {% block extrajs %}
     {% endblock extrajs %}
 
+
     <!-- Map -->
 <!--    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
 
     <!-- Theme JS -->
     <script src="{% static 'js/theme.min.js' %}"></script>
-
+    {% endblock body %}
   </body>
 </html>

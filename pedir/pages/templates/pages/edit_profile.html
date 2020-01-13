@@ -1,12 +1,7 @@
 {% extends 'pages/_base.html' %}
 {% load static %}
 
-    {% block extrahead %}
-        <link rel="stylesheet" href="{% static 'libs/quill/dist/quill.core.css' %}">
-        <link rel="stylesheet" href="{% static 'libs/mde/simplemde.min.css' %}">
-    {% endblock extrahead %}
-
-    {% block body %}
+{% block body %}
         <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
         <div class="container">
 
@@ -16,7 +11,7 @@
           </button>
 
           <!-- Brand -->
-          <a class="navbar-brand mr-auto text-muted"  href="{% url 'home' %}">
+          <a class="navbar-brand mr-auto text-muted" href="{% url 'home' %}">
             Scribble
           </a>
 
@@ -342,8 +337,8 @@
 
                   <!-- Menu -->
                   <div class="dropdown-menu dropdown-menu-right">
-                    <a href="profile-posts.html" class="dropdown-item">Profile</a>
-                    <a href="settings.html" class="dropdown-item">Settings</a>
+                    <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
+                    <a href="{% url 'view-profile' %}" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
                     <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
@@ -372,63 +367,10 @@
 
         </div> <!-- / .container -->
       </nav>
+
         <div class="main-content">
-             <div class="container" style="margin-top: 48px;">
-                    <div class="header">
-                      <div class="header-body">
-
-                        <h6 class="header-pretitle">
-                          Post
-                        </h6>
-
-                        <h1 class="header-title">
-                          Create New Post
-                        </h1>
-
-                      </div>
-                    </div>
-              <form class="" method="post">
-                  {% csrf_token %}
-                <div class="form-group">
-                    <label>Title</label>
-                    <input name="title" class="form-control" placeholder="Give your blog a title" required>
-                </div>
-
-                <div class="form-group">
-                    <div class="dropzone dropzone-single" data-toggle="dropzone" data-options='{"url": "https://google.com", "maxFiles": 1, "acceptedFiles": "image/*"}'>
-                </div>
-
-              <div class="form-group">
-                  <textarea id="mdd" name="body"></textarea>
-              </div>
-
-
-             </div>
-
-
-
-
-          <hr>
-
-            <div class="container mb-lg-4">
-                <button type="submit"  class="btn btn-primary btn-lg btn-block">
-                    Save
-                </button>
-              </div>
-          </form>
-
-
-
+            <div class="container" style="margin-top: 48px;">
+                <h1>Profile Edit</h1>
+            </div>
         </div>
-
-    {% block extrajs %}
-    <script src="{% static 'libs/mde/simplemde.min.js' %}"></script>
-          <script src="{% static 'libs/dropzone/dist/min/dropzone.min.js' %}"></script>
-    <script>
-    var simplemde = new SimpleMDE({ element : document.getElementById('mdd')});
-    </script>
-
-
-    {% endblock extrajs %}
-    {% endblock body %}
-
+{% endblock body %}

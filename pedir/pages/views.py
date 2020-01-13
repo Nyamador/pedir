@@ -45,3 +45,6 @@ def profile_view(request):
     #     'profile': profile
     # }
     return render(request, 'pages/profile_view.html')
+
+def edit(request):
+    return render(request, 'pages/edit_profile.html' )

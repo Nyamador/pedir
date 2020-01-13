@@ -38,6 +38,7 @@ class Profile(models.Model):
     linkedIn = models.URLField(verbose_name="linkedIn Url", max_length=150, null=True, blank=True)
     twitter = models.URLField(verbose_name="Twitter Url", max_length=150, null=True, blank=True)
     ig = models.URLField(verbose_name="Ig Url", max_length=150, null=True, blank=True)
+    verified = models.BooleanField(verbose_name="Verified", default=False)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

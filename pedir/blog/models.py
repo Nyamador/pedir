@@ -10,6 +10,7 @@ class Blog(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(verbose_name="Title", max_length=150, null=False, blank=False)
     slug = models.SlugField(verbose_name="Slug", max_length=100)
+    # cover = models.ImageField()
     body = models.CharField(verbose_name="Blog Body", max_length=50000, null=False, blank=False)
     created = models.DateField(verbose_name="Date Created", auto_now_add=True)
     time = models.TimeField(verbose_name="Time",auto_now_add=True)
@@ -28,6 +29,9 @@ class Blog(models.Model):
         if read_time < 1:
             return int(1)
         return int(read_time)
+    
+    def get_body_as_plaintext(self):
+        return markdown(self.body, output_format='html')
 
     def get_body_as_markdown(self):
         return mark_safe(markdown(self.body, safe_mode='escape'))
