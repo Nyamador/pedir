@@ -1,0 +1,431 @@
+{% extends 'pages/_base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light" id="topnav">
+    <div class="container">
+
+      <!-- Toggler -->
+      <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand mr-auto text-muted"  href="{% url 'home' %}">
+        Scribble
+      </a>
+
+      <!-- Form -->
+      <form class="form-inline mr-4 d-none d-lg-flex">
+        <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-options="{&quot;valueNames&quot;: [&quot;name&quot;]}">
+
+          <!-- Input -->
+          <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown" placeholder="Search" aria-label="Search">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fe fe-search"></i>
+            </div>
+          </div>
+
+          <!-- Menu -->
+          <div class="dropdown-menu dropdown-menu-card">
+            <div class="card-body">
+
+              <!-- List group -->
+              <div class="list-group list-group-flush list my-n3">
+                <a href="{% url 'home' %}" class="list-group-item px-0">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Title -->
+                      <h4 class="text-body mb-1 name">
+                        Search Coming Soon
+                      </h4>
+
+                      <!-- Time -->
+<!--                          <p class="small text-muted mb-0">-->
+<!--                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>-->
+<!--                          </p>-->
+
+                    </div>
+                  </div> <!-- / .row -->
+                </a>
+
+              </div>
+
+            </div>
+          </div> <!-- / .dropdown-menu -->
+
+        </div>
+      </form>
+
+      <div class="navbar-user">
+
+        {% comment%}
+        <!-- Dropdown -->
+        <div class="dropdown mr-4 d-none d-lg-flex">
+
+          <!-- Toggle -->
+          <a href="#" class="navbar-user-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="icon active">
+              <i class="fe fe-bell"></i>
+            </span>
+          </a>
+          {% endcomment %}
+
+          <!-- Menu -->
+
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+
+                  <!-- Title -->
+                  <h5 class="card-header-title">
+                    Notifications
+                  </h5>
+
+                </div>
+                <div class="col-auto">
+
+                  <!-- Link -->
+                  <a href="#!" class="small">
+                    View all
+                  </a>
+
+                </div>
+              </div> <!-- / .row -->
+            </div> <!-- / .card-header -->
+            <div class="card-body">
+
+              <!-- List group -->
+              <div class="list-group list-group-flush my-n3">
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Dianna Smiley</strong> shared your post with Ab Hadley, Adolfo Hess, and 3 others.
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-2.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Ab Hadley</strong> reacted to your post with a 😍
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-3.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Adolfo Hess</strong> commented <blockquote class="mb-0">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-4.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Daniela Dewitt</strong> subscribed to you.
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-5.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Miyah Myles</strong> shared your post with Ryu Duke, Glen Rouse, and 3 others.
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-6.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Ryu Duke</strong> reacted to your post with a 😍
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-7.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Glen Rouse</strong> commented <blockquote class="mb-0">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+                <a class="list-group-item text-reset px-0" href="#!">
+
+                  <div class="row">
+                    <div class="col-auto">
+
+                      <!-- Avatar -->
+                      <div class="avatar avatar-sm">
+                        <img src="{% static '/img/avatars/profiles/avatar-8.jpg' %}" alt="..." class="avatar-img rounded-circle">
+                      </div>
+
+                    </div>
+                    <div class="col ml-n2">
+
+                      <!-- Content -->
+                      <div class="small">
+                        <strong>Grace Gross</strong> subscribed to you.
+                      </div>
+
+                      <!-- Time -->
+                      <small class="text-muted">
+                        2m ago
+                      </small>
+
+                    </div>
+                  </div> <!-- / .row -->
+
+                </a>
+              </div>
+
+            </div>
+          </div> <!-- / .dropdown-menu -->
+
+        </div>
+
+        <!-- Dropdown -->
+        {% if request.user.is_authenticated %}
+            <div class="dropdown">
+
+              <!-- Toggle -->
+              <a href="#" class="avatar avatar-sm dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" -webkit-mask-image: none;">
+                <img src="{% static '/img/avatars/profiles/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle">
+              </a>
+
+              <!-- Menu -->
+              <div class="dropdown-menu dropdown-menu-right">
+                <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
+                <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
+                <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
+                <hr class="dropdown-divider">
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              </div>
+
+            </div>
+        {%  else %}
+            <a class="btn btn-outline-secondary mb-2" href="{% url 'account_login' %}">Login</a>
+        {% endif %}
+
+
+
+      </div>
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
+
+        <!-- Form -->
+        <form class="mt-4 mb-3 d-md-none">
+          <input type="search" class="form-control form-control-rounded" placeholder="Search" aria-label="Search">
+        </form>
+
+
+      </div>
+
+    </div> <!-- / .container -->
+  </nav>
+    <div class="main-content">
+         <div class="container" style="margin-top: 48px;">
+                <div class="header">
+                  <div class="header-body">
+
+                    <h6 class="header-pretitle">
+                      Post
+                    </h6>
+
+                    <h1 class="header-title">
+                      Edit Your Post
+                    </h1>
+
+                  </div>
+                </div>
+          <form class="" method="post">
+              {% csrf_token %}
+              {% if form.errors %}
+              {% for field in form %}
+              {% for error in field.errors %}
+                  <div class="invalid-feedback">
+                      {{ error  }}
+                  </div>
+              {% endfor %}
+              {% endfor %}
+
+            {% endif %}
+
+            {% with WIDGET_ERROR_CLASS='is-invalid' %}
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                {% render_field form.title|add_class:'form-control'|add_error_class:"is-invalid" %}
+                <div class="invalid-feedback">
+                    {{ form.title.errors }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.body.id_for_label }}">{{ form.body.label }}</label>
+                {% render_field form.body|add_class:'form-control'|add_error_class:"is-invalid" %}
+                <div class="invalid-feedback">
+                    {{ form.body.errors }}
+                </div>
+            </div>            
+            {% endwith %}            
+         </div>
+
+
+
+      <hr>
+
+        <div class="container mb-lg-4">
+            <button type="submit"  class="btn btn-primary btn-lg btn-block">
+                Update
+            </button>
+          </div>
+      </form>
+
+
+
+    </div>
+{% endblock body %}

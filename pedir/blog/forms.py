@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Blog
+from .models import Post
 
 
 class BlogCreationForm(ModelForm):
     class Meta:
         fields = '__all__'
-        model = Blog
+        model = Post

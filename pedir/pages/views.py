@@ -1,17 +1,25 @@
 from django.contrib.auth.decorators import login_required
+from django.views.generic import UpdateView
 from django.shortcuts import render, get_object_or_404, redirect
 from users.models import Profile
-from blog.models import Blog
+from blog.models import Post
 from blog.forms import BlogCreationForm
+from users.forms import ProfileForm
 
 
 def index(request):
-    qs = Blog.objects.all()
-
+    qs = Post.objects.all()
+    trends = "sih"
     context = {
         'qs': qs
     }
     return render(request, 'pages/index.html', context)
+
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title', 'body']
+    template_name = 'pages/post_update_view.html'
 
 
 def new(request):
@@ -19,15 +27,15 @@ def new(request):
             user = request.user
             title = request.POST.get('title')
             body = request.POST.get('body')
-            new_blog = Blog(user=user, title=title, body=body)
-            new_blog.save()
+            new_post = Post(user=user, title=title, body=body)
+            new_post.save()
             return redirect('home')
 
     return render(request, 'pages/new-post.html')
 
 
 def detail(request, slug):
-    post = get_object_or_404(Blog, slug=slug)
+    post = get_object_or_404(Post, slug=slug)
 
     context = {
         'post': post
@@ -47,4 +55,9 @@ def profile_view(request):
     return render(request, 'pages/profile_view.html')
 
 def edit(request):
-    return render(request, 'pages/edit_profile.html' )
+    context = {
+        'form' : ProfileForm
+    }
+    return render(request, 'pages/edit_profile.html', context )
+
+    

@@ -3,6 +3,15 @@
 
     {% block extrahead %}
               <link rel="stylesheet" href="{% static 'css/main.css' %}">
+              <style>
+                .like{
+                    fill:#828282 !important;
+                }
+
+                .like:hover{
+                    border-radius: 50%;
+                }              
+              </style>
     {% endblock extrahead %}
 
 {% block body %}
@@ -16,7 +25,7 @@
 
           <!-- Brand -->
           <a class="navbar-brand mr-auto text-muted" href="index.html">
-            Scribble
+            Express
           </a>
 
           <!-- Form -->
@@ -342,7 +351,6 @@
                   <!-- Menu -->
                   <div class="dropdown-menu dropdown-menu-right">
                     <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
-                    <a href="{% url 'view-profile' %}" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
                     <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
@@ -374,76 +382,99 @@
 
 
 <div class="main-content">
-    <div class="container" style="margin-top: 48px;">
+    <div class="container" style="margin-top: 40px;">
         <div class="row">
             <div class="col-12 col-xl-8">
-             {% for post in qs %}
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="row align-items-center">
 
-                        <div class="col ml-n2">
+              {% for post in qs %}
+              <div class="card">
+                <div class="card-body">
 
-                          <!-- Title -->
-                          <h4 class="card-title mb-1 name blog-title">
-                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                          </h4>
+                  
+                  <div class="row align-items-center">
+                    <div class="row align-items-center no-gutters" style="padding: 10px 10px 10px 0;">
+                      <a href="#" class="avatar avatar-sm dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" -webkit-mask-image: none;">
+                            <img src="/static/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                      </a>
+  
+                       <p class="card-text small text-muted mb-1 ml-2 align-baseline">
+                           
+                         </p>
+                     </div>
+                    
+                    <div class="col ml-n2">
 
-                          <!-- Text -->
-                          <p class="card-text small text-muted mb-1 post-summary">
-                            {{ post.get_body_as_plaintext | striptags }}
-                          </p>
+                      <!-- Title -->
+                      <h4 class="card-title mb-1 name">
+                        <a href="{{post.get_absolute_url}}">{{ post.title }}</a>
+                      </h4>
 
-                            <!--Author-->
-                            <h4 class="card-title mb-1 name" style="margin-top: 10px;">
-                                <a href="#">
-                                    {{ post.user.profile }}
-                                </a>
-                            </h4>
-                          <!-- Time -->
-                          <p class="card-text small text-muted">
-                            <i class="fe fe-clock"></i> {{ post.created  }} | {{ post.get_avg_read_time }} min read
-                          </p>
+                      <!-- Text -->
+                      <p class="card-text small text-muted mb-1 ">
+                        {{ post.body }}
+                      </p>
 
+                      <!-- <div class="col-4-12 flex-row al-ctr mr-10 action-icon">
+                        <div class="like thumbs-up flex-row al-ctr" data-zeus='{{feed.id}}' data-liked="true">
+                            <svg style="fill:#828282;" class="nav-svg like" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet" id="thumbsup" class="icon__InlineSvg-sc-1oek49q-0 wLBhT"><title id="title">thumbsup</title><g><path fill-rule="evenodd" clip-rule="evenodd" d="M7.11609 6.25327C7.30603 6.91034 7.75196 7.56741 8.73756 8.22448C7.67788 8.22448 6.74923 8.24963 5.9474 8.33187C2.58744 8.6765 1.45411 10.0237 2.23758 14.7245C3.02066 19.423 4.53964 19.2648 8.86905 18.8137C9.14666 18.7848 9.43631 18.7546 9.73758 18.7245C12.8823 18.41 14.7376 18.2245 14.7376 14.2245C14.7376 12.5811 14.6536 11.2445 14.3536 10.2245C14.2542 9.8866 14.1311 9.58344 13.9794 9.31537C13.6845 8.79387 13.2817 8.40512 12.7356 8.15169L13.5775 6.33754C14.3267 6.68523 14.9003 7.17426 15.3369 7.74823C15.5731 7.31245 15.9303 6.89419 16.4732 6.60115C17.1608 6.23008 17.8831 6.22448 18.2376 6.22448C18.5921 6.22448 19.3143 6.23008 20.0019 6.60115C20.8289 7.04747 21.2248 7.78428 21.4188 8.43103C21.5624 8.9347 21.6562 9.65668 21.6942 10.4126C21.7289 11.1359 21.7375 12.0698 21.7376 13.2245C21.7375 14.3791 21.7289 15.3131 21.6942 16.0364C21.6562 16.7923 21.5624 17.5143 21.4188 18.0179C21.2248 18.6647 20.8289 19.4015 20.0019 19.8478C19.3143 20.2189 18.5921 20.2245 18.2376 20.2245C17.8831 20.2245 17.1608 20.2189 16.4732 19.8478C15.9618 19.5718 15.6152 19.1846 15.3793 18.7764C15.1401 19.0456 14.8636 19.2903 14.5454 19.5077C13.2538 20.3905 11.5302 20.5588 10.1881 20.6898C10.1027 20.6981 10.0187 20.7063 9.93658 20.7146C9.65345 20.7428 9.37742 20.7715 9.10868 20.7994L9.10752 20.7996C8.20887 20.8929 7.39167 20.9778 6.66298 21.0115C5.71916 21.0538 4.67884 21.0247 3.71167 20.6554C1.45262 19.7929 0.687679 17.5907 0.264782 15.0533C-0.218098 12.156 -0.211308 9.44247 1.7682 7.76513C2.69259 6.98185 3.83361 6.62916 4.94181 6.44761C5.00189 6.43799 5.06274 6.42876 5.12437 6.41988C5.03077 5.97543 4.9896 5.55387 4.98756 5.22448C4.98756 2.89168 6.35162 1.49043 7.55798 0.609369C8.09816 0.21485 8.81247 -0.0717593 9.62532 0.0158339C10.4377 0.103374 11.0536 0.533314 11.4523 1.00362C12.1947 1.87944 12.3851 3.07465 12.2065 4.0758C12.1218 4.55031 12.1093 4.88402 12.212 5.17057C12.2859 5.37664 12.5205 5.84698 13.5775 6.33754L12.7356 8.15169C9.84489 6.81018 10.0423 4.8188 10.2376 3.72448C10.4328 2.63016 9.71331 1.51184 8.73756 2.22448C7.76181 2.93711 6.98756 3.81576 6.98756 5.22448C6.98756 5.56741 7.01696 5.91034 7.11609 6.25327ZM19.7376 13.2245C19.7376 17.8078 19.6126 18.2245 18.2376 18.2245C16.8626 18.2245 16.7376 17.8078 16.7376 13.2245C16.7376 8.64114 16.8626 8.22448 18.2376 8.22448C19.6126 8.22448 19.7376 8.64114 19.7376 13.2245Z" transform="translate(5.26244 5.77551)"></path></g></svg>
+                            <p class="ml-4" id="likes">feed.likes</p>
                         </div>
+                    </div> -->
 
+                      <!-- Time -->
+                      <p class="card-text small text-muted">
+                        <i class="fe fe-clock"></i> {{post.user.profile}} | 2hr ago | Engineering
+                      </p>
+                      
+                    </div>
+                    <div class="col-auto">
+                      
+                      <!-- Dropdown -->
+                      {% if request.user == "{{post.user}}" %}
+                      <div class="dropdown">
+                        <a href="#" class="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fe fe-edit mr-4"></i>
+                        </a>
+                      </div>
+                      <div class="dropdown">
+                        <a href="#" class="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fe fe-thumbs-up mr-4"></i>
+                        </a>
+                      </div>
 
-                      <div class="col-auto">
+                      {% else %}                      
+                      <div class="dropdown">
+                        <a href="#" class="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fe fe-thumbs-up mr-4"></i>
+                        </a>
+                      </div>
 
-                          <!-- Dropdown -->
-                          <div class="dropdown">
-                            <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fe fe-more-vertical"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(17px, 25px, 0px);">
-                              <a href="#!" class="dropdown-item">
-                                Bookmark
-                              </a>
-                              <a href="#!" class="dropdown-item">
-                                Report
-                              </a>
-                            </div>
-                          </div>
+                      {% endif %}
 
-                        </div><div class="col-auto">
+                    </div>
+                  </div> <!-- / .row -->
+                </div> <!-- / .card-body -->
+              </div> 
+              {% endfor  %}             
 
-                          <!-- Avatar -->
-                          <a href="project-team-overview.html" class="avatar avatar-lg">
-                            <img src="{% static '/img/avatars/teams/team-logo-1.jpg' %}" alt="..." class="avatar-img rounded">
-                          </a>
-
-                        </div></div> <!-- / .row -->
-                    </div> <!-- / .card-body -->
-                  </div>
-              {% endfor  %}
             </div>
 
             <div class="col-12 col-xl-4">
+
+              
+                <div style="width: 100%;" class="justify-content-center">
+                  <a href="{% url 'create-post' %}" class="btn btn-success mb-3" style="width: 100%;">New Post</a>
+                </div>
+              
                 <div class="card">
                     <div class="card-body">
-                      <h1 class="header-title"> Categories </h1>
+                      <h4 class="header-title"> Trending </h4>
                         <hr>
-                      <p class="text-muted">1</p>
+                      <div>
+                        <a href="#" class="text-muted mb-3">
+                           1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore!
+                        </a>
+                      </div>
                     </div>
             </div>
                 </div>
@@ -453,17 +484,4 @@
     </div>
 </div>
 
-{% comment %}
-                {% for field in form.visible_fields %}
-                  <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field|add_class:"form-control"  | add_error_class:'is-invalid' }}
-                    {% for error in field.errors %}
-                      <div class="invalid-feedback">
-                          {{ error }}
-                      </div>
-                    {% endfor %}
-                  </div>
-                {% endfor %}
-{% endcomment %}
 {% endblock body %}

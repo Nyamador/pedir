@@ -2,8 +2,6 @@
 {% load static %}
 
     {% block extrahead %}
-        <link rel="stylesheet" href="{% static 'libs/quill/dist/quill.core.css' %}">
-        <link rel="stylesheet" href="{% static 'libs/mde/simplemde.min.css' %}">
     {% endblock extrahead %}
 
     {% block body %}
@@ -342,8 +340,7 @@
 
                   <!-- Menu -->
                   <div class="dropdown-menu dropdown-menu-right">
-                    <a href="profile-posts.html" class="dropdown-item">Profile</a>
-                    <a href="settings.html" class="dropdown-item">Settings</a>
+                    <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
                     <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
@@ -391,20 +388,16 @@
                   {% csrf_token %}
                 <div class="form-group">
                     <label>Title</label>
-                    <input name="title" class="form-control" placeholder="Give your blog a title" required>
-                </div>
-
-                <div class="form-group">
-                    <div class="dropzone dropzone-single" data-toggle="dropzone" data-options='{"url": "https://google.com", "maxFiles": 1, "acceptedFiles": "image/*"}'>
+                    <input name="title" class="form-control" placeholder="Give your post a title" required>
                 </div>
 
               <div class="form-group">
-                  <textarea id="mdd" name="body"></textarea>
+                  <label>Your Post</label>
+                  <input class="form-control" name="body" placeholder="Write your post"></input>
               </div>
 
 
              </div>
-
 
 
 
@@ -422,13 +415,6 @@
         </div>
 
     {% block extrajs %}
-    <script src="{% static 'libs/mde/simplemde.min.js' %}"></script>
-          <script src="{% static 'libs/dropzone/dist/min/dropzone.min.js' %}"></script>
-    <script>
-    var simplemde = new SimpleMDE({ element : document.getElementById('mdd')});
-    </script>
-
-
     {% endblock extrajs %}
     {% endblock body %}
 

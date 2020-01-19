@@ -394,22 +394,13 @@
 
                     <div>
                         {% autoescape on %}
-                            {{ post.get_body_as_markdown }}
+                            {{ post.body }}
                         {% endautoescape %}
                     </div>
                 </div>
         </div>
 
             {% block extrajs %}
-        <script src="{% static 'libs/highlightjs/highlight.pack.min.js' %}"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-          document.querySelectorAll('code').forEach((block) => {
-            hljs.highlightBlock(block);
-          });
-        });
-        // hljs.initHighlightingOnLoad();
-      </script>
             {% endblock extrajs %}
 {% endblock body %}
 

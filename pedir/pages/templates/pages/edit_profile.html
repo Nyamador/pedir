@@ -1,5 +1,6 @@
 {% extends 'pages/_base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block body %}
         <nav class="navbar navbar-expand-lg navbar-light" id="topnav">
@@ -338,7 +339,6 @@
                   <!-- Menu -->
                   <div class="dropdown-menu dropdown-menu-right">
                     <a href="{% url 'view-profile' %}" class="dropdown-item">Profile</a>
-                    <a href="{% url 'view-profile' %}" class="dropdown-item">Settings</a>
                     <a href="{% url 'create-post' %}" class="dropdown-item">New Post</a>
                     <a href="{% url 'account_reset_password' %}" class="dropdown-item">Change Password</a>
                     <hr class="dropdown-divider">
@@ -370,7 +370,28 @@
 
         <div class="main-content">
             <div class="container" style="margin-top: 48px;">
-                <h1>Profile Edit</h1>
+                    <div class="header">
+                      <div class="header-body">
+
+                        <h6 class="header-pretitle">
+                        </h6>
+
+                        <h1 class="header-title">
+                          Edit Profile
+                        </h1>
+
+                      </div>
+                    </div>
+
+                    <form>
+                      <div class="container">
+                          <div class="form-group">
+                              <input class="form-control" name="username" placeholder="Username">
+                          </div>
+                      <input type="submit" class="btn btn-primary">
+                      </div>
+                    </form>
+
             </div>
         </div>
 {% endblock body %}
