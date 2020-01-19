@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
-import sentry_sdk
+# import os
+# import sentry_sdk
 # import django_heroku
-from sentry_sdk.integrations.django import DjangoIntegration
+# from sentry_sdk.integrations.django import DjangoIntegration
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -166,14 +166,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = 'home'
 
 #SENTRY 
-sentry_sdk.init(
-    dsn="https://df2c18db984946e7baacd572a47af3bc@sentry.io/1874607",
-    integrations=[DjangoIntegration()],
+# sentry_sdk.init(
+#     dsn="https://df2c18db984946e7baacd572a47af3bc@sentry.io/1874607",
+#     integrations=[DjangoIntegration()],
 
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
-)
+#     # If you wish to associate users to errors (assuming you are using
+#     # django.contrib.auth) you may enable sending PII data.
+#     send_default_pii=True
+# )
 
 
 #Whitenoise
