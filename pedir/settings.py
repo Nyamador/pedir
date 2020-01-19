@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 # import os
 # import sentry_sdk
-# import django_heroku
+import django_heroku
 # from sentry_sdk.integrations.django import DjangoIntegration
 
 
@@ -181,4 +181,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
