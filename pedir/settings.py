@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-# import os
+import os
 # import sentry_sdk
 import django_heroku
 # from sentry_sdk.integrations.django import DjangoIntegration
